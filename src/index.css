@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Card {
+  border: 0.10rem solid black;
+  padding: 0.15rem;
+} 
+
+.Form {
+  border: 0.10rem solid black;
+  padding: 0.15rem;
+} 
