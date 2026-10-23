@@ -5,10 +5,10 @@ import PostCard from './PostCard'
 
 export default function Post({})
 {
-    const [posts,setPosts] = useState([])
-    const [message,setMessage] = useState('')
-    const [error,setError] = useState('')
-    const [processing,setProcessing] = useState(false)
+    const [posts, setPosts] = useState([])
+    const [message, setMessage] = useState('')
+    const [error, setError] = useState('')
+    const [processing, setProcessing] = useState(false)
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -50,11 +50,10 @@ export default function Post({})
             setMessage('')
         }
         catch (err) {
-            const errMsg = err.response?.data?.message || "Failed to STORE post"
+            const errMsg = err.response?.data?.message || "Failed to share post. Please try again."
             setError(errMsg)
         }
-        finally
-        {
+        finally {
             setProcessing(false)
         }
     }
@@ -82,7 +81,6 @@ export default function Post({})
                             type="submit"
                             className="post-submit-btn"
                             disabled={processing || !message.trim()}
-                        >
                             {processing ? 'Posting...' : 'Post'}
                         </button>
                     </div>
